@@ -59,6 +59,7 @@ public class DocumentDetailFragment extends Fragment {
 			wv.getSettings().setBuiltInZoomControls(true);
 	    	wv.getSettings().setDisplayZoomControls(false);
 	    	wv.getSettings().setUseWideViewPort(true);
+	    	wv.setInitialScale(2);
 		}
 
 		return rootView;
