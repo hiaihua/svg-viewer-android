@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.webkit.WebView;
 
 import biz.codefuture.svgviewer.dummy.DummyContent;
 
@@ -54,8 +54,11 @@ public class DocumentDetailFragment extends Fragment {
 
 		// Show the dummy content as text in a TextView.
 		if (mItem != null) {
-			((TextView) rootView.findViewById(R.id.document_detail))
-					.setText(mItem.content);
+			WebView wv = (WebView) rootView.findViewById(R.id.document_detail);
+			wv.loadUrl(mItem.content);
+			wv.getSettings().setBuiltInZoomControls(true);
+	    	wv.getSettings().setDisplayZoomControls(false);
+	    	wv.getSettings().setUseWideViewPort(true);
 		}
 
 		return rootView;

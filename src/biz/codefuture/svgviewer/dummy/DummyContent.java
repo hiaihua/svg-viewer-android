@@ -25,9 +25,9 @@ public class DummyContent {
 
 	static {
 		// Add 3 sample items.
-		addItem(new DummyItem("1", "Item 1"));
-		addItem(new DummyItem("2", "Item 2"));
-		addItem(new DummyItem("3", "Item 3"));
+		addItem(new DummyItem("1", "file:///storage/sdcard0/svg/it-crowd.svg"));
+		addItem(new DummyItem("2", "file:///storage/sdcard0/svg/jimi_hendrix.svg"));
+		addItem(new DummyItem("3", "file:///storage/sdcard0/svg/yin-yang.svg"));
 	}
 
 	private static void addItem(DummyItem item) {
