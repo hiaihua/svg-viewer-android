@@ -25,13 +25,14 @@ public class DummyContent {
 
 	static {
 		// Add 3 sample items.
-		addItem(new DummyItem("1", "file:///storage/sdcard0/svg/it-crowd.svg"));
-		addItem(new DummyItem("2", "file:///storage/sdcard0/svg/jimi_hendrix.svg"));
-		addItem(new DummyItem("3", "file:///storage/sdcard0/svg/yin-yang.svg"));
-		addItem(new DummyItem("4", "http://openclipart.org/people/rejon/rejon_Supergirl.svg"));
-		addItem(new DummyItem("5", "http://openclipart.org/people/rejon/rejon_Rejon_s_Head.svg"));
-		addItem(new DummyItem("6", "http://openclipart.org/people/Andy/Andy_ant.svg"));
-		
+		addItem(new DummyItem("1", "http://openclipart.org/people/rejon/rejon_Supergirl.svg"));
+		addItem(new DummyItem("2", "http://openclipart.org/people/rejon/rejon_Rejon_s_Head.svg"));
+		addItem(new DummyItem("3", "http://openclipart.org/people/Andy/Andy_ant.svg"));
+		addItem(new DummyItem("4", "http://openclipart.org/people/Andy/Andy_Tools_Hammer_Spanner.svg"));
+		addItem(new DummyItem("5", "http://openclipart.org/people/Andy/Andy_Trash_Can.svg"));
+		addItem(new DummyItem("6", "http://openclipart.org/people/rejon/rejon_Ant_Icon.svg"));
+		addItem(new DummyItem("7", "http://openclipart.org/people/rejon/rejon_Nicu_s_crash_cchost_file.svg"));
+		addItem(new DummyItem("8", "http://openclipart.org/people/rejon/rejon_House_Outlines.svg"));
 		
 	}
 
