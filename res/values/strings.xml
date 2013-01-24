@@ -2,18 +2,19 @@
 <resources>
 
     <string name="app_name">SVG viewer</string>
-    <string name="app_versionName">1.3</string><string name="hello_world">Hello world!</string>
+    <string name="app_versionName">1.3</string><string name="app_publisherName">Publisher: CodeFuture Solutions LLC</string><string name="app_copyright">©2013 CodeFuture Solutions LLC</string><string name="app_publisher_website">www.codefuture.biz</string><string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_search">Search</string>
     <string name="menu_zoom_fit">Zoom to fit</string>
-    <string name="title_document_detail">Document Detail</string>
-    <string name="title_document_list">Documents</string>
+    <string name="title_document_detail">SVG view</string>
+    <string name="title_document_list">SVG documents</string>
     <string name="title_activity_search">Search</string>
     <string name="title_activity_about">About</string>
     <string name="menu_about">About</string>
-    <string name="app_publisherName">Publisher: CodeFuture Solutions LLC</string>
-    <string name="app_copyright">©2013 CodeFuture Solutions LLC</string>
-    <string name="app_publisher_website">www.codefuture.biz</string>
+    <string name="menu_document_properties">Properties</string>
+    
+    
+    
     
 
 </resources>

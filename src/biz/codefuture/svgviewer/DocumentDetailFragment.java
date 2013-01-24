@@ -3,7 +3,8 @@ package biz.codefuture.svgviewer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-//import android.view.Menu;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
@@ -45,6 +46,7 @@ public class DocumentDetailFragment extends Fragment {
 			mItem = DummyContent.ITEM_MAP.get(getArguments().getString(
 					ARG_ITEM_ID));
 		}
+		setHasOptionsMenu(true);
 	}
 
 	@Override
@@ -65,5 +67,14 @@ public class DocumentDetailFragment extends Fragment {
 
 		return rootView;
 	}
+	
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		super.onCreateOptionsMenu(menu, inflater);
+		// Inflate the menu; this adds items to the action bar if it is present.
+		inflater.inflate(R.menu.document_fragment, menu);
+	}
+
+
 	
 }
