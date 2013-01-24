@@ -47,11 +47,15 @@
         <activity
             android:name="biz.codefuture.svgviewer.DocumentDetailActivity"
             android:label="@string/title_document_detail"
-            android:uiOptions="splitActionBarWhenNarrow"
-            android:parentActivityName=".DocumentListActivity" >
+            android:parentActivityName=".DocumentListActivity"
+            android:uiOptions="splitActionBarWhenNarrow" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DocumentListActivity" />
+        </activity>
+        <activity
+            android:name="biz.codefuture.svgviewer.SearchActivity"
+            android:label="@string/title_activity_search" >
         </activity>
     </application>
 
