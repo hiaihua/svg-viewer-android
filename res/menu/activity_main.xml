@@ -1,6 +1,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <item android:id="@+id/menu_zoom_fit"
+    <item android:id="@+id/search"
+       android:icon="@drawable/ic_action_search"
+       android:title="@string/menu_search"
+       android:showAsAction="ifRoom|withText" /><item android:id="@+id/menu_zoom_fit"
        android:icon="@drawable/ic_menu_zoom_fit"
        android:title="@string/menu_zoom_fit"
        android:showAsAction="ifRoom|withText" />
