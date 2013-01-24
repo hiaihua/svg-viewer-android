@@ -66,7 +66,8 @@ public class DocumentListActivity extends FragmentActivity implements
 		switch (item.getItemId()) {
 		case R.id.menu_zoom_fit:
 			return true;
-			
+		case R.id.about:
+			startActivity(new Intent(DocumentListActivity.this, AboutActivity.class));
 //		case R.id.menu_search:
 //			return true;
 		}
