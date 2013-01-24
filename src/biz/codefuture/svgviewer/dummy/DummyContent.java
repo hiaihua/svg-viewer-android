@@ -28,6 +28,11 @@ public class DummyContent {
 		addItem(new DummyItem("1", "file:///storage/sdcard0/svg/it-crowd.svg"));
 		addItem(new DummyItem("2", "file:///storage/sdcard0/svg/jimi_hendrix.svg"));
 		addItem(new DummyItem("3", "file:///storage/sdcard0/svg/yin-yang.svg"));
+		addItem(new DummyItem("4", "http://openclipart.org/people/rejon/rejon_Supergirl.svg"));
+		addItem(new DummyItem("5", "http://openclipart.org/people/rejon/rejon_Rejon_s_Head.svg"));
+		addItem(new DummyItem("6", "http://openclipart.org/people/Andy/Andy_ant.svg"));
+		
+		
 	}
 
 	private static void addItem(DummyItem item) {
