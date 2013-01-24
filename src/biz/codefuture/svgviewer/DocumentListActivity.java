@@ -3,6 +3,7 @@ package biz.codefuture.svgviewer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
 
 /**
  * An activity representing a list of Documents. This activity has different
@@ -49,6 +50,13 @@ public class DocumentListActivity extends FragmentActivity implements
 		}
 
 		// TODO: If exposing deep links into your app, handle intents here.
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.activity_main, menu);
+		return true;
 	}
 
 	/**

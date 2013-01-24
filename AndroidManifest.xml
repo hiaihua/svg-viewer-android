@@ -47,6 +47,7 @@
         <activity
             android:name="biz.codefuture.svgviewer.DocumentDetailActivity"
             android:label="@string/title_document_detail"
+            android:uiOptions="splitActionBarWhenNarrow"
             android:parentActivityName=".DocumentListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
