@@ -1,5 +1,7 @@
 package biz.codefuture.svgviewer;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -99,4 +101,19 @@ public class DocumentListActivity extends FragmentActivity implements
 			startActivity(detailIntent);
 		}
 	}
+	
+	@Override
+	public void onStart() {
+	    super.onStart();
+	    //... // The rest of your onStart() code.
+	    EasyTracker.getInstance().activityStart(this); // Add this method.
+    }
+
+	@Override
+	public void onStop() {
+	  super.onStop();
+	    //... // The rest of your onStop() code.
+	    EasyTracker.getInstance().activityStop(this); // Add this method.
+	}	
+	
 }
