@@ -2,6 +2,8 @@ package biz.codefuture.svgviewer;
 
 import com.google.analytics.tracking.android.EasyTracker;
 
+import android.app.AlertDialog;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -70,10 +72,17 @@ public class DocumentListActivity extends FragmentActivity implements
 			return true;
 		case R.id.about:
 			startActivity(new Intent(DocumentListActivity.this, AboutActivity.class));
+		case R.id.document_properties:
+			showDocumentProperties();
 //		case R.id.menu_search:
 //			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	private void showDocumentProperties() {
+		DialogFragment docProps = new DocumentPropertiesDialog();
+		docProps.show(getFragmentManager(), "test");
 	}
 
 	/**
