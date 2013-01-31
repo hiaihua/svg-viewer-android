@@ -73,16 +73,12 @@ public class DocumentListActivity extends FragmentActivity implements
 		case R.id.about:
 			startActivity(new Intent(DocumentListActivity.this, AboutActivity.class));
 		case R.id.document_properties:
-			showDocumentProperties();
+			DialogFragment docProps = new DocumentPropertiesDialog();
+			docProps.show(getFragmentManager(), "test");
 //		case R.id.menu_search:
-//			return true;
+//			return true; // get json and display thumbnails
 		}
 		return super.onOptionsItemSelected(item);
-	}
-	
-	private void showDocumentProperties() {
-		DialogFragment docProps = new DocumentPropertiesDialog();
-		docProps.show(getFragmentManager(), "test");
 	}
 
 	/**
