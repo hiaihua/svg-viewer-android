@@ -4,6 +4,7 @@
        android:icon="@drawable/ic_action_search"
        android:title="@string/menu_search"
        android:actionViewClass="android.widget.SearchView"
+       android:queryHint="Search OpenClipart.org"
        android:showAsAction="ifRoom|withText" />
     
     <item android:id="@+id/menu_settings"
