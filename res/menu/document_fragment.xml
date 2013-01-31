@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/menu_zoom_fit"
+      android:icon="@drawable/ic_menu_zoom_fit"
+      android:title="@string/menu_zoom_fit"
+      android:showAsAction="ifRoom|withText" />
+    
     <item 
-        android:id="@+id/document_properties" 
-        android:title="@string/menu_document_properties" 
-        android:icon="@drawable/ic_document_properties" 
-        android:showAsAction="ifRoom|withText"
-        android:visible="true"></item>
+      android:id="@+id/document_properties" 
+      android:title="@string/menu_document_properties" 
+      android:icon="@drawable/ic_document_properties" 
+      android:showAsAction="ifRoom|withText"
+      android:visible="true"/>
     
 
 </menu>
