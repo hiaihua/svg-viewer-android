@@ -26,7 +26,7 @@ public class DummyContent {
 	public static Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
 	private static void addFeedItems(String feedUrl) {
-		int itemCount = 10;
+		int itemCount = 10; // get itemCount from XMLParser
 		for (int i = 0; i < itemCount; i +=1) {
 			
 		}
