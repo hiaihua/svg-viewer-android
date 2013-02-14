@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import biz.codefuture.svgviewercore.*;
+
 /**
  * Helper class for providing sample content for user interfaces created by
  * Android template wizards.
@@ -23,8 +25,16 @@ public class DummyContent {
 	 */
 	public static Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
+	private static void addFeedItems(String feedUrl) {
+		int itemCount = 10;
+		for (int i = 0; i < itemCount; i +=1) {
+			
+		}
+	}
+	
 	static {
-		// Add 3 sample items.
+		// read http://openclipart.org/rss/new.xml and get 
+		addFeedItems("http://openclipart.org/rss/new.xml");
 		addItem(new DummyItem("1", "http://openclipart.org/people/rejon/rejon_Supergirl.svg"));
 		addItem(new DummyItem("2", "http://openclipart.org/people/rejon/rejon_Rejon_s_Head.svg"));
 		addItem(new DummyItem("3", "http://openclipart.org/people/Andy/Andy_ant.svg"));
