@@ -2,10 +2,10 @@
 <resources>
 
     <string name="app_name">SVG viewer</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">History Here</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_zoom_fit">Zoom to fit</string>
-    <string name="title_activity_history">HistoryActivity</string>
+    <string name="title_activity_history">SVG viewer</string>
     <string name="action_settings">Settings</string>
 
 </resources>
