@@ -33,8 +33,8 @@ public class HistoryActivity extends ListActivity {
 		
 		try {
             File dir = getBaseContext().getFilesDir();
-            String history_filename = dir + "/" + "history.json";
-            File file = new File(history_filename);
+            String history_filename = "history.json";
+            File file = new File(dir, history_filename);
             if(!file.exists()) {
             	file.createNewFile();
             	// TODO work out proper file creation with empty JSON array
