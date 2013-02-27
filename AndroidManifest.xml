@@ -18,15 +18,8 @@
             android:name="biz.codefuture.svgviewer.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:scheme="file" />
                 <data android:host="*" />
                 <data android:mimeType="image/svg+xml" />
@@ -40,6 +33,10 @@
         <activity
             android:name="biz.codefuture.svgviewer.HistoryActivity"
             android:label="@string/title_activity_history" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
