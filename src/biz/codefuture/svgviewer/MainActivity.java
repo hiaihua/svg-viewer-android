@@ -11,7 +11,7 @@ import android.webkit.WebView;
 
 public class MainActivity extends Activity {
 	
-//	private static final String TAG = "SVGViewerActivity";
+//	private static final String TAG = "svg-viewer-main-activity";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,8 @@ public class MainActivity extends Activity {
 	    Uri data = intent.getData();
 	    //Log.v(TAG, "data=" + data);
 
-	    if (data != null && data.toString().indexOf("file") > -1) {	
+	    if (data != null)  {	
+	    	// TODO should we handle file vs web uris here? // data.toString().indexOf("file") > -1) {	
 	    	WebView webview = (WebView) findViewById(R.id.webView1);
 	    	webview.loadUrl(data.toString());
 	    	webview.getSettings().setBuiltInZoomControls(true);
