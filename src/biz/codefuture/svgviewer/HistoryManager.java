@@ -49,20 +49,15 @@ public class HistoryManager
 				} 
 			}
 		} catch (Exception e) {e.printStackTrace();}
-		 // Log.v("history manager context", context.toString());
 	}
 
 	private void createHistoryJSON(File file) {
 		try {
-		file.createNewFile();
-		// TODO work out proper file creation with empty JSON array
-		String empty_history = "{history: [" + "'file:///storage/sdcard0/svg/it-crowd.svg'" +
-			"]}";
-		Log.v("history file_name", file_name);
-		Log.v("history file_name_path", file_name_path);
-		FileOutputStream fos = this.ctx.openFileOutput(file_name, Context.MODE_PRIVATE);
-		fos.write(empty_history.getBytes());
-		fos.close();
+			file.createNewFile();
+			String empty_history = "{history: []}";
+			FileOutputStream fos = this.ctx.openFileOutput(file_name, Context.MODE_PRIVATE);
+			fos.write(empty_history.getBytes());
+			fos.close();
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
@@ -70,13 +65,9 @@ public class HistoryManager
 		return this.history_list;
 	}
 	
-	public boolean addSvg(Uri path) {
-		boolean added = true;
-		
+	public void addSvg(Uri path) {
 		this.history_list.add(path.toString());
 		persistJSON();
-    
-		return added;
 	}
 	
 	public void clearHistory() {

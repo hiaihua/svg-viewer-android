@@ -4,8 +4,11 @@ import android.app.*;
 import android.content.*;
 import android.net.*;
 import android.os.*;
+import android.util.Log;
 import android.view.*;
 import android.widget.*;
+import android.widget.AdapterView.OnItemLongClickListener;
+
 import java.io.*;
 
 public class HistoryActivity extends ListActivity {
@@ -24,6 +27,15 @@ public class HistoryActivity extends ListActivity {
 			android.R.layout.simple_list_item_1, history_manager.getList());
 //			android.R.layout.simple_expandable_list_item_1, history_manager.getList());
 	  setListAdapter(adapter);
+	  
+	  this.getListView().setLongClickable(true);
+	   this.getListView().setOnItemLongClickListener(new OnItemLongClickListener() {
+	        public boolean onItemLongClick(AdapterView<?> parent, View v, int position, long id) {
+	        //Do some
+	        	Log.v("item long click", "allow item removal here");
+	            return true;
+	        }
+	    });
 	}
 	
 	@Override

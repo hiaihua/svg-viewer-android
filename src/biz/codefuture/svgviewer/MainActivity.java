@@ -41,7 +41,6 @@ public class MainActivity extends Activity {
 	    	//webview.zoomOut();
 				
 			history_manager.addSvg(Uri.parse(data.toString()));
-				
 	    }
 	}
 
