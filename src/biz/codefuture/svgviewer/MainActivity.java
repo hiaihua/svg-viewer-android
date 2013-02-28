@@ -32,6 +32,9 @@ public class MainActivity extends Activity {
 	    	webview.getSettings().setDisplayZoomControls(false);
 	    	webview.getSettings().setUseWideViewPort(true);
 	    	//webview.zoomOut();
+				
+				//history_manager.addSvg(URI_s);
+				
 	    }
 	}
 
