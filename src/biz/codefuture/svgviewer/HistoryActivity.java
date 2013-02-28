@@ -57,7 +57,7 @@ public class HistoryActivity extends ListActivity {
               }
             Log.v("history check", jString);
             JSONObject jObject = new JSONObject(jString); 
-            JSONArray jsonArray = (JSONArray)jObject.getJSONArray("history"); 
+            JSONArray jsonArray = jObject.getJSONArray("history"); 
             if (jsonArray != null) { 
                for (int i=0;i<jsonArray.length();i++) { 
                 history_list.add(jsonArray.get(i).toString()); 
