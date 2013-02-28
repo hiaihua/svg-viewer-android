@@ -15,6 +15,8 @@ public class HistoryManager
 	File files_dir;
 	Context ctx;
 	ArrayList<String> history_list = new ArrayList<String>();   
+  String file_name = "history.json";
+  String file_name_path;
 
 	public HistoryManager(File files_dir, Context ctx) {
 		 this.files_dir = files_dir;
@@ -22,8 +24,7 @@ public class HistoryManager
 
 		try {
 			File dir = this.files_dir;
-			String history_filename = "history.json";
-			File file = new File(dir, history_filename);
+			File file = new File(dir, file_name);
 			if(!file.exists()) {
 				createHistoryJSON(file);
 			}
@@ -59,7 +60,7 @@ public class HistoryManager
 			"]}";
 		Log.v("history init", empty_history);
 		Log.v("history file.name", file.getName());
-		FileOutputStream fos = this.ctx.openFileOutput(file.getName(), Context.MODE_PRIVATE);
+		FileOutputStream fos = this.ctx.openFileOutput(file_name_path, Context.MODE_PRIVATE);
 		fos.write(empty_history.getBytes());
 		fos.close();
 		} catch (Exception e) {e.printStackTrace();}
@@ -73,9 +74,26 @@ public class HistoryManager
 		boolean added = true;
 		
 		this.history_list.add(path.toString());
-		// save to json string on disk
-		
+		persistJSON();
+    
 		return added;
 	}
 	
+  private void persistJSON() {
+    
+    // convert this.history_list to JSON and write to history.json
+    try {
+      // TODO work out proper file creation with empty JSON array
+      JSONArray jsArray = new JSONArray(this.history_list);
+      JSONObject jsObj = new JSONObject();
+      jsObj.put("history", jsArray);
+      String history_json = jsObj.toString();
+       
+      Log.v("persisJSON", history_json);
+      FileOutputStream fos = this.ctx.openFileOutput(file_name_path, Context.MODE_PRIVATE);
+      fos.write(history_json.getBytes());
+      fos.close();
+    } catch (Exception e) {e.printStackTrace();}
+    
+    }
 }
