@@ -1,5 +1,4 @@
 package biz.codefuture.svgviewer;
-import android.app.*;
 import android.content.*;
 import android.net.*;
 import android.util.*;
@@ -15,8 +14,8 @@ public class HistoryManager
 	File files_dir;
 	Context ctx;
 	ArrayList<String> history_list = new ArrayList<String>();   
-  String file_name = "history.json";
-  String file_name_path;
+	String file_name = "history.json";
+	String file_name_path;
 
 	public HistoryManager(File files_dir, Context ctx) {
 		 this.files_dir = files_dir;
@@ -25,9 +24,10 @@ public class HistoryManager
 		try {
 			File dir = this.files_dir;
 			File file = new File(dir, file_name);
-			if(!file.exists()) {
-				createHistoryJSON(file);
-			}
+			file_name_path = dir + "/" + file_name;
+			if (!file.exists()) { 
+				createHistoryJSON(file); 
+			}	
 
 			FileInputStream stream = new FileInputStream(file);
 			Log.v("history file", file.toString());
@@ -58,9 +58,9 @@ public class HistoryManager
 		// TODO work out proper file creation with empty JSON array
 		String empty_history = "{history: [" + "'file:///storage/sdcard0/svg/it-crowd.svg'" +
 			"]}";
-		Log.v("history init", empty_history);
-		Log.v("history file.name", file.getName());
-		FileOutputStream fos = this.ctx.openFileOutput(file_name_path, Context.MODE_PRIVATE);
+		Log.v("history file_name", file_name);
+		Log.v("history file_name_path", file_name_path);
+		FileOutputStream fos = this.ctx.openFileOutput(file_name, Context.MODE_PRIVATE);
 		fos.write(empty_history.getBytes());
 		fos.close();
 		} catch (Exception e) {e.printStackTrace();}
@@ -79,6 +79,10 @@ public class HistoryManager
 		return added;
 	}
 	
+	public void clearHistory() {
+		Log.v("clearHistory", "do it here");
+	}
+	
   private void persistJSON() {
     
     // convert this.history_list to JSON and write to history.json
@@ -89,8 +93,8 @@ public class HistoryManager
       jsObj.put("history", jsArray);
       String history_json = jsObj.toString();
        
-      Log.v("persisJSON", history_json);
-      FileOutputStream fos = this.ctx.openFileOutput(file_name_path, Context.MODE_PRIVATE);
+      Log.v("persistJSON", history_json);
+      FileOutputStream fos = this.ctx.openFileOutput(file_name, Context.MODE_PRIVATE);
       fos.write(history_json.getBytes());
       fos.close();
     } catch (Exception e) {e.printStackTrace();}

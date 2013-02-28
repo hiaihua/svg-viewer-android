@@ -1,13 +1,17 @@
 package biz.codefuture.svgviewer;
 
+import java.io.File;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
 //import android.util.Log;
+import biz.codefuture.svgviewer.HistoryManager;
 
 public class MainActivity extends Activity {
 	
@@ -17,6 +21,9 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		File files_dir = getBaseContext().getFilesDir();
+		HistoryManager history_manager = new HistoryManager(files_dir, (Context)this);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
@@ -33,7 +40,7 @@ public class MainActivity extends Activity {
 	    	webview.getSettings().setUseWideViewPort(true);
 	    	//webview.zoomOut();
 				
-				//history_manager.addSvg(URI_s);
+			history_manager.addSvg(Uri.parse(data.toString()));
 				
 	    }
 	}

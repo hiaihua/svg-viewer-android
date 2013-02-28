@@ -21,7 +21,7 @@ public class HistoryActivity extends ListActivity {
 		history_manager = new HistoryManager(files_dir, (Context)this);
 		
 	  ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-			android.R.layout.simple_list_item_1, history_manager.getList());
+			android.R.layout.simple_expandable_list_item_1, history_manager.getList());
 	  setListAdapter(adapter);
 	}
 	
