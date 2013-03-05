@@ -13,7 +13,8 @@ import java.io.*;
 
 public class HistoryActivity extends ListActivity {
 
-	HistoryManager history_manager;
+	public HistoryManager history_manager;
+	private boolean resumeHasRun = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,19 +24,36 @@ public class HistoryActivity extends ListActivity {
 		File files_dir = getBaseContext().getFilesDir();
 		history_manager = new HistoryManager(files_dir, (Context)this);
 		
-	  ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 			android.R.layout.simple_list_item_1, history_manager.getList());
 //			android.R.layout.simple_expandable_list_item_1, history_manager.getList());
-	  setListAdapter(adapter);
+	  	setListAdapter(adapter);
 	  
-	  this.getListView().setLongClickable(true);
-	   this.getListView().setOnItemLongClickListener(new OnItemLongClickListener() {
+	  	this.getListView().setLongClickable(true);
+	  	this.getListView().setOnItemLongClickListener(new OnItemLongClickListener() {
 	        public boolean onItemLongClick(AdapterView<?> parent, View v, int position, long id) {
 	        //Do some
 	        	Log.v("item long click", "allow item removal here");
 	            return true;
 	        }
 	    });
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		Log.v("onDestroy main app", "persistJSON here");
+		history_manager.persistJSON();
+	}
+	
+	@Override
+	protected void onResume() {
+	    super.onResume();
+	    if (!resumeHasRun) {
+	        resumeHasRun = true;
+	        return;
+	    }
+		Log.v("onStart", "refresh list here - or does listadapter take care of that?");
 	}
 	
 	@Override
