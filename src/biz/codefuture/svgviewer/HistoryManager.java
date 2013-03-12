@@ -68,7 +68,7 @@ public class HistoryManager
 	public void addSvg(Uri path) {
 		this.history_list.add(path.toString());
 		Log.v("addSvg", path.toString());
-//		persistJSON();
+		persistJSON();
 	}
 	
 	public void clearHistory() {
