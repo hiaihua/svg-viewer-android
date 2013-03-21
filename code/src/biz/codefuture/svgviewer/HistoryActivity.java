@@ -43,7 +43,7 @@ public class HistoryActivity extends ListActivity {
 	protected void onDestroy() {
 		super.onDestroy();
 		Log.v("onDestroy main app", "persistJSON here");
-		//history_manager.persistJSON();
+		history_manager.persistJSON();
 	}
 	
 	@Override
